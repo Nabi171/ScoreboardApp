@@ -81,8 +81,11 @@ store.subscribe(render);
 document.getElementById('incrementForm').addEventListener('submit', (e) => {
     const incrementEL = document.getElementById("increment");
     const incrementELvalue = parseFloat(incrementEL.value);
+
     store.dispatch(increment(incrementELvalue));
+
     e.preventDefault();
+
 });
 
 
@@ -100,6 +103,43 @@ document.getElementById('reset-btn').addEventListener('click', () => {
     store.dispatch(reset());
 
 });
+
+
+
+
+
+// document.getElementById('add-btn').addEventListener('click', () => {
+//     document.getElementById('add_mathes').innerHTML = ` <div class="all-matches container">
+//     <!-- Each form tag is Each row, This will render multiple times on Clicking 'Add Another Match' -->
+//     <div class="match">
+//         <div class="wrapper">
+//             <button class="lws-delete">
+//                 <img src="./image/delete.svg" alt="" />
+//             </button>
+//             <h3 class="lws-matchName">Match 1</h3>
+//         </div>
+//         <div class="inc-dec">
+//             <form id="incrementForm" class="incrementForm">
+//                 <h4>Increment</h4>
+//                 <input id="increment" type="number" name="increment" class="lws-increment" />
+//             </form>
+//             <form id="decrementForm" class="decrementForm">
+//                 <h4>Decrement</h4>
+//                 <input type="number" name="decrement" class="lws-decrement" id="decrement" />
+//             </form>
+//         </div>
+//         <div class="numbers">
+//             <h2 class="lws-singleResult" id="counter">0</h2>
+//         </div>
+//     </div>
+// </div>`
+
+
+//     const incrementEL = document.getElementById("increment");
+//     const incrementELvalue = parseFloat(incrementEL.value);
+//     store.dispatch(increment(incrementELvalue));
+//     e.preventDefault();
+// });
 
 
 //raw js file for testing purpose
