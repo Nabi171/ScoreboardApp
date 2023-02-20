@@ -178,24 +178,39 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 
 
 
-
-
 // for adding another row
 
-const anotherMatches = document.getElementById('add_mathes');
+
 
 document.getElementById('add-btn').addEventListener('click', function () {
-    anotherMatches.innerHTML = ` <div class="match">
+    // for (let i = 0; i < arry.length; i++) {
+
+    //     array.push(obj);
+
+    // }
+
+    const array = [{
+
+        "id": 2,
+        "increment_value": 1,
+        "decrement_value": 2,
+        "counter_number": 3
+
+    }]
+
+    const obj = array.map(arr => {
+        document.getElementById('add_mathes').innerHTML = ` <div class="match">
     <div class="wrapper">
         <button class="lws-delete">
             <img src="./image/delete.svg" alt="" />
         </button>
-        <h3 class="lws-matchName">Match 1</h3>
+        <h3 class="lws-matchName">Match ${arr.id}</h3>
     </div>
     <div class="inc-dec">
         <form id="incremetForm2" class="incrementForm">
             <h4>Increment</h4>
-            <input id="increment2" type="number" name="increment" class="lws-increment" />
+            <input id="increment2" type="number" 
+            name="increment" class="lws-increment" />
         </form>
         <form id="decrementForm2" class="decrementForm">
             <h4>Decrement</h4>
@@ -205,8 +220,14 @@ document.getElementById('add-btn').addEventListener('click', function () {
     <div class="numbers">
         <h2 class="lws-singleResult" id="counter2">0</h2>
     </div>
-</div>
-</div>`;
+    </div>
+    </div>`;
+    }
+    )
+
+
+
+
 
 
 })
