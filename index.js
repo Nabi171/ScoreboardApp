@@ -176,29 +176,44 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 
 
 
-
-
 // for adding another row
 
 
 
 document.getElementById('add-btn').addEventListener('click', function () {
+
+    let array = [];
+    const incrementEL = document.getElementById("increment");
+    const counterEL = document.getElementById("counter");
+    const counterValue = parseFloat(counterEL.innerText);
+
+    array.push({
+        id: 2,
+        data1: incrementEL.value,
+        data2: counterValue,
+
+    });
+    let newArray = [...array];
+    array = newArray;
+
+    // const array = [
+    //     {
+
+    //         "id": 2,
+    //         "increment_value": 1,
+    //         "decrement_value": 2,
+
+
+    //     },
+
+    // ]
     // for (let i = 0; i < arry.length; i++) {
 
     //     array.push(obj);
 
     // }
 
-    const array = [{
-
-        "id": 2,
-        "increment_value": 1,
-        "decrement_value": 2,
-        "counter_number": 3
-
-    }]
-
-    const obj = array.map(arr => {
+    const obj = array?.map(arr => {
         document.getElementById('add_mathes').innerHTML = ` <div class="match">
     <div class="wrapper">
         <button class="lws-delete">
@@ -218,7 +233,7 @@ document.getElementById('add-btn').addEventListener('click', function () {
         </form>
     </div>
     <div class="numbers">
-        <h2 class="lws-singleResult" id="counter2">0</h2>
+        <h2 class="lws-singleResult" id="counter2">${counterValue}</h2>
     </div>
     </div>
     </div>`;
