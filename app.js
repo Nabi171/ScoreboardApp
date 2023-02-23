@@ -133,25 +133,36 @@ const render = () => {
             });
         });
     });
+
+
+
+
+
+
+    // decrement
+    const decrementButtons = document.querySelectorAll(".lws-decrement");
+    decrementButtons.forEach((button, index) => {
+        button.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                const value = parseInt(e.target.value);
+                e.preventDefault();
+                store.dispatch({
+                    type: "DECREMENT",
+                    payload: {
+                        id: index,
+                        value: value,
+                    },
+                });
+            }
+        });
+    });
+
+
+
+
 };
 
-//decrement
-// const decrementButtons = document.querySelectorAll(".lws-decrement");
-// decrementButtons.forEach((button, index) => {
-//   button.addEventListener("keypress", (e) => {
-//     if (e.key === "Enter") {
-//       const value = parseInt(e.target.value);
-//       e.preventDefault();
-//       store.dispatch({
-//         type: "DECREMENT",
-//         payload: {
-//           id: index,
-//           value: value,
-//         },
-//       });
-//     }
-//   });
-// });
+
 
 render();
 
